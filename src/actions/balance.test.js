@@ -9,3 +9,10 @@
 
     expect(actions.setBalance(balance)).toEqual(expectedAction)
  });
+
+ it('should create an actions to deposit into the balanced ', () => {
+    const deposit = 10
+    const expectedAction =  {type: constants.DEPOSIT, deposit}
+    
+    expect(actions.deposit(deposit)).toEqual(expectedAction )
+ });
