@@ -5,7 +5,7 @@
            case constant.SET_BALANCE:
                return action.balance
             default: 
-                return balance
+                return state
       }
  }
 
