@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## TDD React Redux With Jest & Enzyme
+
+![TDD React Redux](https://s3-us-west-2.amazonaws.com/sola-images/wp-content/uploads/2019/12/11163501/Pella-Black-Door-1024x683.jpg)
 
 In the project directory, you can run:
 
