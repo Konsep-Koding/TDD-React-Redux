@@ -9,5 +9,8 @@ describe('App', () => {
     const app = shallow(<App/>)
     it('Render', () => {
         expect(app).toMatchSnapshot();
-});
+    });
+    it('should contain `Wallet` component ', () => {
+        expect(app.find('Connect(Wallet)').exists()).toBe(true)
+    });
 });

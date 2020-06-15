@@ -13,6 +13,7 @@ describe('Wallet', () => {
         expect(wallet).toMatchSnapshot();
 });
     it('should dispay data balance', () => {
+
         expect(wallet.find('.balance').text()).toEqual('Wallet balance: 20')
     });
 });

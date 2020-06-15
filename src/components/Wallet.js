@@ -10,4 +10,4 @@ import { connect } from 'react-redux'
         )
     }
 }
-export default connect(state => { return { balance: state.balance }}, null)(Wallet)
+export default connect(state => { return { balance: state }}, null)(Wallet)
