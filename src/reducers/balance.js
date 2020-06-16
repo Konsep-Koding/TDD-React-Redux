@@ -6,6 +6,8 @@
                return action.balance
            case constant.DEPOSIT:
                return state + action.deposit  
+           case constant.WITHDRAW:
+               return state - action.withdrawal
             default: 
                 return state
       }
