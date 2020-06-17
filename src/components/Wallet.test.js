@@ -16,4 +16,8 @@ describe('Wallet', () => {
 
         expect(wallet.find('.balance').text()).toEqual('Wallet balance: 20')
     });
+
+    it('should create an input deposit into or withdraw from the balance', () => {
+        expect(wallet.find('.input-wallet').exists()).toBe(true)
+    });
 });

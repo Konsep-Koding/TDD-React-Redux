@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
         return (
           <div>
               <h3 className='balance'>Wallet balance: {this.props.balance}</h3>
+              <br/>
+              <input className='input-wallet'/>
           </div>
         )
     }
