@@ -1,16 +1,25 @@
  import * as constant from '../actions/constants'
- 
+ import {read_cookie, bake_cookie} from 'sfcookies'
+
+ const BALANCE_COOKIE = 'BALANCE_COOKIE'
   const balance = (state = 0, action) => {
+      let balance
       switch(action.type) {
            case constant.SET_BALANCE:
-               return action.balance
+               balance = action.balance
+                break 
            case constant.DEPOSIT:
-               return state + action.deposit  
+               balance = state + action.deposit  
+                break
            case constant.WITHDRAW:
-               return state - action.withdrawal
+               balance = state - action.withdrawal
+                break
             default: 
-                return state
+                balance = parseInt(read_cookie(BALANCE_COOKIE), 10) || state 
       }
+
+      bake_cookie(BALANCE_COOKIE, balance)
+      return balance
  }
 
 

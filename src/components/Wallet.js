@@ -27,6 +27,6 @@ import { deposit, withdraw } from '../actions/balance'
         )
     }
 }
-export default connect(state => { return { balance: state }}, {deposit, withdraw})(Wallet)
+export default connect(state => state, {deposit, withdraw})(Wallet)
 
  

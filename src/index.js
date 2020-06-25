@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
-import rootReducer from './reducers/balance'
-import { createStore } from 'redux'
+import rootReducer from './reducers';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(rootReducer)
 
 
 
 ReactDOM.render(
- <Provider store={store}>
+<Provider store={createStore(rootReducer, applyMiddleware(thunk))}>
     <App />
   </Provider>,
   document.getElementById('root')
