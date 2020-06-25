@@ -14,7 +14,6 @@ export class Loot extends Component {
      return this.props.balance / parseInt(bitcoin.bpi.USD.rate.replace(',', ''), 10)
   }
   render() {
-    console.log('this', this.computeBitcoin())
     return (
       <h3>Bitcoin balance: {this.computeBitcoin()}</h3>
     )
