@@ -7,7 +7,7 @@ configure({ adapter: new Adapter(), disableLifecycleMethods: false });
 
 describe('Loot Component', () => {
     const mockFetchbitcoin = jest.fn() 
-    const props = {balance: 10, bitcoin: {} }
+    let props = {balance: 10, bitcoin: {} }
     let loot = shallow(<Loot {...props} fetchBitcoin={mockFetchbitcoin} />)
 
 
@@ -15,6 +15,8 @@ describe('Loot Component', () => {
         expect(loot).toMatchSnapshot();
      });
      describe('when mounted', () => {
+    const mockFetchbitcoin = jest.fn() 
+
          beforeEach(() => {
              props.fetchBitcoin = mockFetchbitcoin
              loot = mount(<Loot {...props}  fetchBitcoin={mockFetchbitcoin} />)
@@ -24,4 +26,16 @@ describe('Loot Component', () => {
              expect(mockFetchbitcoin).toHaveBeenCalled()
          });
      });
+
+     describe('when there are valid bitcoin props', () => {
+        beforeEach(() => {
+          props.fetchBitcoin = mockFetchbitcoin
+          props = { balance: 10, bitcoin: { bpi: { USD: { rate: '1,000' } } } };
+          loot = shallow(<Loot {...props} fetchBitcoin={mockFetchbitcoin}/>);
+        });
+    
+        it('displays the correct bitcoin value', () => {
+          expect(loot.find('h3').text()).toEqual('Bitcoin balance: 0.01');
+        });
+      });
 });
