@@ -5,7 +5,7 @@ import Loot from './Loot'
 function App() {
   return (
     <div className="App">
-       <h2>Loot Check</h2>
+       <h2>Bitcoin Check</h2>
        <hr/>
        <Wallet/> 
        <hr/>

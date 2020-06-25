@@ -19,7 +19,7 @@ import { deposit, withdraw } from '../actions/balance'
           <div>
               <h3 className='balance'>Wallet balance: {this.props.balance}</h3>
               <br/>
-              <input className='input-wallet' onChange={this.updateBalance}/>
+              <input className='input-wallet' type='number' required onChange={this.updateBalance}/>
               <button className='btn-deposit' onClick={this.deposit}> Deposit </button>
               <button className='btn-withdraw' onClick={this.withdraw}> Withdraw </button>
 
